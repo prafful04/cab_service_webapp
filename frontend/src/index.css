@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply font-sans text-gray-900 bg-white;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-yellow-500 hover:bg-yellow-600 text-black font-semibold px-6 py-3 rounded-lg transition-all duration-300 transform hover:scale-105;
+  }
+  .btn-secondary {
+    @apply bg-primary-500 hover:bg-primary-700 text-white font-semibold px-6 py-3 rounded-lg transition-all duration-300;
+  }
+  .btn-outline {
+    @apply border-2 border-yellow-500 text-yellow-500 hover:bg-yellow-500 hover:text-black font-semibold px-6 py-3 rounded-lg transition-all duration-300;
+  }
+  .card {
+    @apply bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300;
+  }
+  .section-title {
+    @apply text-3xl md:text-4xl font-bold text-primary-500 mb-4;
+  }
+  .section-subtitle {
+    @apply text-gray-600 text-lg mb-8 max-w-2xl mx-auto;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-yellow-500 to-yellow-300;
+  }
+}
