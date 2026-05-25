@@ -9,14 +9,19 @@ public class CorsConfig implements WebMvcConfigurer {
 
     @Override
     public void addCorsMappings(CorsRegistry registry) {
+
         registry.addMapping("/api/**")
                 .allowedOrigins(
                         "http://localhost:5173",
                         "http://localhost:3000",
-                        "http://localhost",
-                        "https://cab-service-webapp.vercel.app",
+
+                        "https://cabserviceweba.vercel.app",
+
+                        "https://cabserviceweba-mt1xq4ip1-prafful-s-projects.vercel.app",
+
                         "https://cab-service-weba.vercel.app",
-                        "https://cabserviceweba-mt1xq4ip1-prafful-s-projects.vercel.app"
+
+                        "https://cab-service-webapp.vercel.app"
                 )
                 .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
                 .allowedHeaders("*")
