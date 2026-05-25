@@ -14,7 +14,9 @@ public class CorsConfig implements WebMvcConfigurer {
                         "http://localhost:5173",
                         "http://localhost:3000",
                         "http://localhost",
-                        "https://cab-service-weba.vercel.app"
+                        "https://cab-service-webapp.vercel.app",
+                        "https://cab-service-weba.vercel.app",
+                        "https://cabserviceweba-mt1xq4ip1-prafful-s-projects.vercel.app"
                 )
                 .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
                 .allowedHeaders("*")
