@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 const API = axios.create({
-  baseURL: 'https://cab-service-webapp.onrender.com/api'
+  baseURL: 'https://cab-service-weba.onrender.com/api'
 })
 
 API.interceptors.request.use((config) => {
