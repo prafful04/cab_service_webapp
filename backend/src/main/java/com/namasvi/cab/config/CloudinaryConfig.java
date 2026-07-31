@@ -1,7 +1,14 @@
 package com.namasvi.cab.config;
 
-import org.springframework.context.annotation.Configuration;
+import com.cloudinary.Cloudinary;
+
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+import java.util.HashMap;
+import java.util.Map;
+
 @Configuration
 public class CloudinaryConfig {
 
@@ -12,6 +19,7 @@ public class CloudinaryConfig {
             @Value("${cloudinary.api-secret}") String apiSecret) {
 
         Map<String, String> config = new HashMap<>();
+
         config.put("cloud_name", cloudName);
         config.put("api_key", apiKey);
         config.put("api_secret", apiSecret);
