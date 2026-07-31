@@ -1,3 +1,5 @@
+package com.namasvi.cab.service;
+
 @Service
 public class CloudinaryService {
 
