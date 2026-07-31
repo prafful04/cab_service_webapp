@@ -23,7 +23,8 @@ import java.util.stream.Collectors;
 public class VehicleService {
     private final CloudinaryService cloudinaryService;
     private final VehicleRepository vehicleRepository;
-
+   String imageUrl = cloudinaryService.upload(file);
+     vehicle.setImageUrl(imageUrl);
     public List<VehicleDTO> getAllVehicles() {
         return vehicleRepository.findAll().stream()
                 .map(this::mapToDTO)
@@ -88,6 +89,8 @@ public String upload(@RequestParam("file") MultipartFile file) throws IOExceptio
                 .status(vehicle.getStatus().name())
                 .build();
     }
+
+    
 
     private Vehicle mapToEntity(VehicleDTO dto) {
         return Vehicle.builder()
