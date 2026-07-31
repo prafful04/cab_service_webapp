@@ -1,5 +1,9 @@
 package com.namasvi.cab.service;
+import com.namasvi.cab.service.CloudinaryService;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 
+import java.io.IOException;
 import com.namasvi.cab.dto.VehicleDTO;
 import com.namasvi.cab.entity.Vehicle;
 import com.namasvi.cab.entity.VehicleType;
@@ -17,7 +21,7 @@ import java.util.stream.Collectors;
 @RequiredArgsConstructor
 @Transactional
 public class VehicleService {
-
+    private final CloudinaryService cloudinaryService;
     private final VehicleRepository vehicleRepository;
 
     public List<VehicleDTO> getAllVehicles() {
@@ -68,7 +72,11 @@ public class VehicleService {
                 .map(this::mapToDTO)
                 .collect(Collectors.toList());
     }
+    @PostMapping("/upload")
+public String upload(@RequestParam("file") MultipartFile file) throws IOException {
 
+    return cloudinaryService.upload(file);
+}
     private VehicleDTO mapToDTO(Vehicle vehicle) {
         return VehicleDTO.builder()
                 .id(vehicle.getId())
