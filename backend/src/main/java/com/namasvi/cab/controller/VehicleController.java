@@ -61,4 +61,9 @@ public class VehicleController {
         vehicleService.deleteVehicle(id);
         return ResponseEntity.ok(ApiResponse.success("Vehicle deleted successfully", null));
     }
+    @PostMapping("/upload")
+      public String upload(@RequestParam MultipartFile file) throws IOException {
+
+    return cloudinaryService.upload(file);
+    }
 }
