@@ -14,7 +14,10 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
+import com.namasvi.cab.service.CloudinaryService;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
+import java.io.IOException;
 import java.util.List;
 
 @RestController
@@ -22,6 +25,7 @@ import java.util.List;
 @RequiredArgsConstructor
 public class VehicleController {
 
+    private final CloudinaryService cloudinaryService;
     private final VehicleService vehicleService;
 
     @GetMapping
@@ -62,8 +66,8 @@ public class VehicleController {
         return ResponseEntity.ok(ApiResponse.success("Vehicle deleted successfully", null));
     }
     @PostMapping("/upload")
-      public String upload(@RequestParam MultipartFile file) throws IOException {
+public String upload(@RequestParam MultipartFile file) throws IOException {
 
     return cloudinaryService.upload(file);
-    }
+}
 }
