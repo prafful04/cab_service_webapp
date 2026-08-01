@@ -1,12 +1,15 @@
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import { FaUsers, FaTachometerAlt, FaMoneyBillWave } from 'react-icons/fa'
+import Innova  from './Innova.jpg'
+import Swift  from './Swift.jpg'
+import Ertiga  from './Ertiga.jpg'
+
 
 const fleet = [
-  { name: 'Toyota Etios', type: 'Sedan', capacity: '4+1', price: '₹10/km', img: '/images/etios.jpg' },
-  { name: 'Toyota Innova', type: 'SUV', capacity: '7+1', price: '₹14/km', img: '/images/innova.jpg' },
-  { name: 'Maruti Ertiga', type: 'MPV', capacity: '7+1', price: '₹12/km', img: '/images/ertiga.jpg' },
-  { name: 'Tempo Traveller', type: 'Van', capacity: '12+1', price: '₹20/km', img: '/images/tempo.jpg' },
+  { name: 'Swift', type: 'hatchback', capacity: '3+1', price: '₹10/km', img: Swift },
+  { name: 'Innova', type: 'SUV', capacity: '7+1', price: '₹14/km', img: Innova },
+  { name: 'Ertiga', type: 'MPV', capacity: '7+1', price: '₹12/km', img: Ertiga },
 ]
 
 export default function FleetShowcase() {
@@ -33,9 +36,9 @@ export default function FleetShowcase() {
               transition={{ delay: index * 0.1 }}
               className="card overflow-hidden group"
             >
-              <div className="h-48 bg-gradient-to-br from-primary-100 to-primary-200 flex items-center justify-center relative overflow-hidden">
-                <div className="absolute inset-0 bg-primary-500/10 group-hover:bg-primary-500/20 transition-all" />
-                <div className="text-6xl text-primary-300 z-10">🚗</div>
+              <d<div> <img src={vehicle.img} alt= {vehicle.name} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"/></div>
+                {/* <div className="absolute inset-0 bg-primary-500/10 group-hover:bg-primary-500/20 transition-all" />
+                <div className="text-6xl text-primary-300 z-10">🚗</div> */}
                 <div className="absolute top-3 right-3 bg-yellow-500 text-primary-500 text-xs font-bold px-3 py-1 rounded-full z-10">
                   {vehicle.type}
                 </div>
