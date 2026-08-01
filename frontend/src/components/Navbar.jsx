@@ -45,8 +45,8 @@ export default function Navbar() {
                 {link.label}
               </Link>
             ))}
-            <a href={`tel:${settings?.phone || '+919876543210'}`} className="flex items-center gap-2 text-yellow-400 hover:text-yellow-300 font-medium">
-              <FaPhoneAlt /> {settings?.phone || '+91 98765 43210'}
+            <a href={`tel:${settings?.phone || '+919067856440'}`} className="flex items-center gap-2 text-yellow-400 hover:text-yellow-300 font-medium">
+              <FaPhoneAlt /> {settings?.phone || '+91 90678 56440'}
             </a>
             {isAuthenticated && (
               <div className="flex items-center gap-4">
@@ -85,8 +85,8 @@ export default function Navbar() {
                   {link.label}
                 </Link>
               ))}
-              <a href={`tel:${settings?.phone || '+919876543210'}`} className="flex items-center gap-2 py-2 text-yellow-400 font-medium">
-                <FaPhoneAlt /> {settings?.phone || '+91 98765 43210'}
+              <a href={`tel:${settings?.phone || '+919067856440'}`} className="flex items-center gap-2 py-2 text-yellow-400 font-medium">
+                <FaPhoneAlt /> {settings?.phone || '+91 90678 56440'}
               </a>
               {isAuthenticated && (
                 <>
