@@ -40,7 +40,7 @@ export default function Contact() {
     setSubmitting(true)
     try {
       await createInquiry(form)
-      const waNumber = settings?.whatsappNumber || '919876543210'
+      const waNumber = settings?.whatsappNumber || '919067856440'
       const waMsg = encodeURIComponent(
         `Hello Namasvi Cab Services! I want to inquire about cab booking.\nName: ${form.name}\nPhone: ${form.phone}\nPickup: ${form.pickup}\nDrop: ${form.drop}\nVehicle: ${form.vehicle || 'Not specified'}\nMessage: ${form.message}`
       )
@@ -119,7 +119,7 @@ export default function Contact() {
                     <FaPhoneAlt className="text-yellow-500 mt-1 flex-shrink-0" />
                     <div>
                       <p className="font-medium text-gray-800">Phone</p>
-                      <a href={`tel:${settings?.phone || '+919876543210'}`} className="text-gray-500 text-sm hover:text-yellow-500">{settings?.phone || '+91 98765 43210'}</a>
+                      <a href={`tel:${settings?.phone || '+919067856440'}`} className="text-gray-500 text-sm hover:text-yellow-500">{settings?.phone || '+91 90678 56440'}</a>
                     </div>
                   </div>
                   <div className="flex items-start gap-3">
