@@ -16,8 +16,9 @@ public class CorsConfig implements WebMvcConfigurer {
                         "http://localhost:3000",
 
                         "https://cabserviceweba.vercel.app",
-                        "https://cabserviceweba-mt1xq4ip1-prafful-s-projects.vercel.app",
-                        "https://cab-service-weba.vercel.app",
+                        "cab-service-webapp-d0ymsuizh-prafful-s-projects.vercel.app",
+                        "cab-service-webapp.vercel.app",
+                         "https://cab-service-webapp.vercel.app",
                         "https://cab-service-webapp.vercel.app",
 
                        
