@@ -3,9 +3,11 @@ import { motion } from 'framer-motion'
 import toast from 'react-hot-toast'
 import Loading from '../../components/Loading'
 import * as vehicleService from '../../services/vehicleService'
+import axios from 'axios'
 
 const emptyForm = { name: '', type: 'SEDAN', capacity: 4, pricePerKm: '', imageUrl: '', status: 'AVAILABLE' }
-
+const [form, setForm] = useState(emptyForm)
+const [selectedImage, setSelectedImage] = useState(null)
 export default function Vehicles() {
   const [vehicles, setVehicles] = useState([])
   const [loading, setLoading] = useState(true)
@@ -38,11 +40,44 @@ export default function Vehicles() {
     e.preventDefault()
     if (!form.name || !form.pricePerKm) { toast.error('Name and price are required'); return }
     try {
+      let imageUrl = form.imageUrl;
+
+if (selectedImage) {
+
+    const formData = new FormData();
+
+    formData.append("file", selectedImage);
+
+    const upload = await axios.post(
+        "https://cab-service-webapp.onrender.com/api/vehicles/upload",
+        formData,
+        {
+            headers:{
+                "Content-Type":"multipart/form-data"
+            }
+        }
+    );
+
+    imageUrl = upload.data.data;
+}
       if (editing) {
-        await vehicleService.update(editing, { ...form, pricePerKm: parseFloat(form.pricePerKm), capacity: parseInt(form.capacity) })
+        await vehicleService.update(
+    editing,
+    {
+        ...form,
+        imageUrl,
+        pricePerKm: parseFloat(form.pricePerKm),
+        capacity: parseInt(form.capacity)
+    }
+)
         toast.success('Vehicle updated')
       } else {
-        await vehicleService.create({ ...form, pricePerKm: parseFloat(form.pricePerKm), capacity: parseInt(form.capacity) })
+        await vehicleService.create({
+    ...form,
+    imageUrl,
+    pricePerKm: parseFloat(form.pricePerKm),
+    capacity: parseInt(form.capacity)
+})
         toast.success('Vehicle created')
       }
       setShowModal(false)
@@ -158,15 +193,17 @@ export default function Vehicles() {
                 </div>
               </div>
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">Image URL</label>
-                <input type="text" value={form.imageUrl} onChange={(e) => setForm({...form, imageUrl: e.target.value})}
-                  className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:border-yellow-500 focus:ring-2 focus:ring-yellow-200 outline-none" />
-              </div>
-              <div className="flex justify-end space-x-3 pt-4">
-                <button type="button" onClick={() => setShowModal(false)}
-                  className="px-4 py-2 border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-50">Cancel</button>
-                <button type="submit" className="btn-primary">{editing ? 'Update' : 'Create'}</button>
-              </div>
+  <label className="block text-sm font-medium text-gray-700 mb-1">
+      Vehicle Image
+  </label>
+
+  <input
+      type="file"
+      accept="image/*"
+      onChange={(e)=>setSelectedImage(e.target.files[0])}
+      className="w-full px-3 py-2 border border-gray-300 rounded-lg"
+  />
+</div>
             </form>
           </motion.div>
         </div>

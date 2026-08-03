@@ -1,4 +1,5 @@
 package com.namasvi.cab.service;
+import com.namasvi.cab.service.CloudinaryService;
 
 import com.namasvi.cab.dto.VehicleDTO;
 import com.namasvi.cab.entity.Vehicle;
@@ -17,9 +18,9 @@ import java.util.stream.Collectors;
 @RequiredArgsConstructor
 @Transactional
 public class VehicleService {
-
+    private final CloudinaryService cloudinaryService;
     private final VehicleRepository vehicleRepository;
-
+  
     public List<VehicleDTO> getAllVehicles() {
         return vehicleRepository.findAll().stream()
                 .map(this::mapToDTO)
@@ -80,6 +81,8 @@ public class VehicleService {
                 .status(vehicle.getStatus().name())
                 .build();
     }
+
+    
 
     private Vehicle mapToEntity(VehicleDTO dto) {
         return Vehicle.builder()

@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import { FaUsers, FaTachometerAlt, FaMoneyBillWave } from 'react-icons/fa'
+<<<<<<< HEAD
 import Swift  from '../assets/images/Swift.jpg'
 import Ertiga  from '../assets/images/Ertiga.jpg'
 import Innova  from '../assets/images/Innova.jpg'
@@ -40,8 +41,13 @@ export default function FleetShowcase() {
             >
               <div className="h-48 bg-gradient-to-br from-primary-100 to-primary-200 flex items-center justify-center relative overflow-hidden">
                 <div> <img src={vehicle.img} alt= {vehicle.name} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"/></div>
+<<<<<<< HEAD
                 {/* <div className="absolute inset-0 bg-primary-500/10 group-hover:bg-primary-500/20 transition-all" />
                 <div className="text-6xl text-primary-300 z-10">🚗</div> */}
+=======
+                 <div className="absolute inset-0 bg-primary-500/10 group-hover:bg-primary-500/20 transition-all" />
+               
+>>>>>>> b6dd0445d1a856636033ee01dfcb25cc4279f713
                 <div className="absolute top-3 right-3 bg-yellow-500 text-primary-500 text-xs font-bold px-3 py-1 rounded-full z-10">
                   {vehicle.type}
                 </div>
