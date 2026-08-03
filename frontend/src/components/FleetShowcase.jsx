@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import { FaUsers, FaTachometerAlt, FaMoneyBillWave } from 'react-icons/fa'
-<<<<<<< HEAD
+
 import Swift  from '../assets/images/Swift.jpg'
 import Ertiga  from '../assets/images/Ertiga.jpg'
 import Innova  from '../assets/images/Innova.jpg'
@@ -9,10 +9,10 @@ import Innova  from '../assets/images/Innova.jpg'
 
 
 const fleet = [
-  { name: 'Swift-Dizre', type: 'Sedan', capacity: '4+1', price: '₹10/km', img: 'https://res.cloudinary.com/vsgkmuyd/image/upload/v1785582507/download_lwph7n.jpg' },
+  { name: 'Swift-Dizre', type: 'Sedan', capacity: '4+1', price: '₹10/km', img: Swift },
   { name: 'Toyota Innova', type: 'SUV', capacity: '7+1', price: '₹14/km', img: Innova },
   { name: 'Maruti Ertiga', type: 'MPV', capacity: '7+1', price: '₹12/km', img: Ertiga },
-  { name: '17-seater Tempo Traveller', type: 'LCP', capacity: '17+1', price: '₹35/km', img: '' },
+ // { name: '17-seater Tempo Traveller', type: 'LCP', capacity: '17+1', price: '₹35/km', img: '' }
 ]
 
 export default function FleetShowcase() {
