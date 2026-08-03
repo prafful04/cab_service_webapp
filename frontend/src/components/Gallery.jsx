@@ -1,12 +1,10 @@
 import { motion } from 'framer-motion'
 
 const galleryItems = [
-  { label: 'Toyota Innova', color: 'from-blue-400 to-blue-600' },
-  { label: 'Sedan Fleet', color: 'from-green-400 to-green-600' },
-  { label: 'Tempo Traveller', color: 'from-purple-400 to-purple-600' },
-  { label: 'Premium SUV', color: 'from-orange-400 to-orange-600' },
-  { label: 'Maruti Ertiga', color: 'from-red-400 to-red-600' },
-  { label: 'Our Team', color: 'from-teal-400 to-teal-600' },
+  // { label: 'Toyota Innova', color: 'from-blue-400 to-blue-600' },
+  // { label: 'Sedan Fleet', color: 'from-green-400 to-green-600' },
+  // { label: 'Maruti Ertiga', color: 'from-red-400 to-red-600' },
+  
 ]
 
 export default function Gallery() {
@@ -19,8 +17,8 @@ export default function Gallery() {
           viewport={{ once: true }}
           className="text-center mb-12"
         >
-          <h2 className="section-title">Our Gallery</h2>
-          <p className="section-subtitle">Take a look at our fleet and team</p>
+          {/* <h2 className="section-title">Our Gallery</h2>
+          <p className="section-subtitle">Take a look at our fleet and team</p> */}
         </motion.div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -35,7 +33,9 @@ export default function Gallery() {
             >
               <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-all" />
               <div className="absolute inset-0 flex items-center justify-center">
-                <div className="text-6xl opacity-50">🚗</div>
+                <img
+                  src={`https://res.cloudinary.com/vsgkmuyd/image/upload/v1785582462/${item.label.toLowerCase().replace(/\s+/g, '_')}.jpg`}
+                  alt={item.label}/>
               </div>
               <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/60 to-transparent">
                 <h3 className="text-white font-bold text-lg">{item.label}</h3>
