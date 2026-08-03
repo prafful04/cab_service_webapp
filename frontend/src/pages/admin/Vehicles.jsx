@@ -6,14 +6,14 @@ import * as vehicleService from '../../services/vehicleService'
 import axios from 'axios'
 
 const emptyForm = { name: '', type: 'SEDAN', capacity: 4, pricePerKm: '', imageUrl: '', status: 'AVAILABLE' }
-const [form, setForm] = useState(emptyForm)
-const [selectedImage, setSelectedImage] = useState(null)
+
 export default function Vehicles() {
   const [vehicles, setVehicles] = useState([])
   const [loading, setLoading] = useState(true)
   const [showModal, setShowModal] = useState(false)
   const [editing, setEditing] = useState(null)
   const [form, setForm] = useState(emptyForm)
+  const [selectedImage, setSelectedImage] = useState(null)
 
   useEffect(() => { fetchVehicles() }, [])
 
