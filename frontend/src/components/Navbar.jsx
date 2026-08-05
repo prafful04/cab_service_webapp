@@ -90,7 +90,7 @@ export default function Navbar() {
               </a>
               {isAuthenticated && (
                 <>
-                  <Link to="/admin" onClick={() => setMobileOpen(false)} className="block py-2 text-yellow-400 font-medium">Dashboard</Link>
+                  <Link to="/admin" onClick={() => setMobileOpen(true)} className="block py-2 text-yellow-400 font-medium">Dashboard</Link>
                   <button onClick={() => { logout(); setMobileOpen(false) }} className="btn-outline !py-2 !px-4 !text-sm w-full text-center">Logout</button>
                 </>
               )}
