@@ -52,15 +52,15 @@ export default function Footer() {
                 {settings?.address || 'Nashik, Maharashtra, India'}
               </li>
               <li>
-                <a href={`tel:${settings?.phone || '+919876543210'}`} className="flex items-center gap-3 text-gray-300 hover:text-yellow-400 transition-colors text-sm">
+                <a href={`tel:${settings?.phone || '+919067856440'}`} className="flex items-center gap-3 text-gray-300 hover:text-yellow-400 transition-colors text-sm">
                   <FaPhoneAlt className="text-yellow-400 flex-shrink-0" />
-                  {settings?.phone || '+91 98765 43210'}
+                  {settings?.phone || '+91 90678 56440'}
                 </a>
               </li>
               <li>
-                <a href={`mailto:${settings?.email || 'info@namasvicab.com'}`} className="flex items-center gap-3 text-gray-300 hover:text-yellow-400 transition-colors text-sm">
+                <a href={`mailto:${settings?.email || 'navnikpagar01@gmail.com'}`} className="flex items-center gap-3 text-gray-300 hover:text-yellow-400 transition-colors text-sm">
                   <FaEnvelope className="text-yellow-400 flex-shrink-0" />
-                  {settings?.email || 'info@namasvicab.com'}
+                  {settings?.email || 'navnikpagar01@gmail.com'}
                 </a>
               </li>
             </ul>
