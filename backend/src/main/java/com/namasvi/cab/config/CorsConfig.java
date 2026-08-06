@@ -19,7 +19,6 @@ public class CorsConfig implements WebMvcConfigurer {
                         "cab-service-webapp-d0ymsuizh-prafful-s-projects.vercel.app",
                         "cab-service-webapp.vercel.app",
                          "https://cab-service-webapp.vercel.app",
-                        "https://cab-service-webapp.vercel.app",
 
                        
                         "https://namasvicabservice.in",

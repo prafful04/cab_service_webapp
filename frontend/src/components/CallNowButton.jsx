@@ -5,7 +5,7 @@ import { useSiteSettings } from '../context/SiteSettingsContext'
 
 export default function CallNowButton() {
   const { settings } = useSiteSettings()
-  const PHONE_NUMBER = settings?.phone || '+919876543210'
+  const PHONE_NUMBER = settings?.phone || '+919067856440'
   const [open, setOpen] = useState(false)
 
   return (

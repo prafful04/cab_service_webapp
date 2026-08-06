@@ -3,7 +3,7 @@ import { useSiteSettings } from '../context/SiteSettingsContext'
 
 export default function FloatingWhatsApp() {
   const { settings } = useSiteSettings()
-  const PHONE = settings?.whatsappNumber || '919876543210'
+  const PHONE = settings?.whatsappNumber || '919067856440'
   const MESSAGE = encodeURIComponent('Hello Namasvi Cab Services! I want to inquire about cab booking.')
   return (
     <a
